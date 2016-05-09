@@ -1,9 +1,11 @@
 using System;
-using System.Collections;
+using System.Collections.Generic;
 
-namespace sumAllDigitsNS
+class mainFunction
 {
-    public Stack<int> numbersIn(int value)
+    static int mainValue = Int32.Parse("BMC_TEST_INPUT_MAGIC");
+    
+    public static Stack<int> numbersIn(int value)
     {
         if (value == 0) return new Stack<int>();
     
@@ -14,7 +16,7 @@ namespace sumAllDigitsNS
         return numbers;
     }
     
-    public int auxSum(int N)
+    public static int auxSum(int N)
     {
         int result = 0;
         
@@ -28,7 +30,7 @@ namespace sumAllDigitsNS
         return result;
     }
     
-    public int sumAllDigits(int N)
+    public static int sumAllDigits(int N)
     {
         int sum = 0;
         if(N==1)
@@ -53,12 +55,14 @@ namespace sumAllDigitsNS
         {
             Console.WriteLine("N should be greater than 1.");
             }      
-                
+        
+        Console.WriteLine(sum);
         return sum;
-    }
+    }  
     
-    static public void Main ()
+    static void Main (string[] args)
     {
-       Console.WriteLine(sumAllDigits("BMC_TEST_INPUT_MAGIC"));
+       //Console.WriteLine(sumAllDigits(mainValue));
+       sumAllDigits(mainValue);
     }
-}
+}  
