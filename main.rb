@@ -1,24 +1,9 @@
 #sumAllDigits in Ruby
-#Auxiliar function
-def number_or_nil(string)
-  Integer(string || '')
-rescue ArgumentError
-  nil
-end
-#Converts a number into an array
-def numbers_in(value)
-    numbers = Array.new
-	if value==0 then numbers end
-	numbers = numbers_in(value/10)
-	numbers.push(value%10)
-	return numbers
-end
 #Sums the digits of a number
 def aux_sum(n)
-	result = 0
-	array_n = Array.new
-	array_n = numbers_in(n)
-	for i in 0..array_n.length
+    result = 0
+	array_n = n.to_s.split('').map(&:to_i)
+	for i in 0..array_n.length-1
 		result += array_n[i]
 	end
 	return result
@@ -43,5 +28,4 @@ def sum_all_digits(n)
 	return sum
 end
 
-input_number = number_or_nil("BMC_TEST_INPUT_MAGIC")
-sum_all_digits(input_number)
+#sum_all_digits(10)
